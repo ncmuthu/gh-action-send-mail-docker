@@ -4,7 +4,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-def send_email()
+def send_email():
     # Get environment variables
     sender_email = os.getenv('FROM_EMAIL')
     receiver_email = os.getenv('TO_EMAIL')
@@ -35,8 +35,5 @@ def send_email()
 
     print('Email sent successfully!!')
 
-def main():
-    send_email()
-
 if __name__ == "__main__":
-    main()
+    send_email()
