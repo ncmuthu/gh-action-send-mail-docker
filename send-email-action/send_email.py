@@ -33,7 +33,7 @@ def send_email()
         server.login(smtp_username, smtp_password)
         server.sendmail(sender_email, receiver_email, message.as_string())
 
-    print('Email sent successfully!')
+    print('Email sent successfully!!')
 
 def main():
     send_email()
