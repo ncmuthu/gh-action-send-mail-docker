@@ -1,3 +1,16 @@
+"""
+Script Name: send_email.py
+Description: This script sends an email using SMTP server configuration provided via environment variables.
+Owner: DevOps Team
+Usage:
+    1. Ensure the following environment variables are set:
+        - FROM_EMAIL: Sender's email address
+        - TO_EMAIL: Recipient's email address
+        - SMTP_SERVER: SMTP server address
+        - SMTP_PORT: SMTP server port
+    2. Run the script.
+Note: If the connection to the SMTP server is blocked or the authentication fails, appropriate error messages will be displayed.
+"""
 #!/usr/bin/env python
 import os
 import smtplib
