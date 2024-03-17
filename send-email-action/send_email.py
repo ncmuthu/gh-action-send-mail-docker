@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 Script Name: send_email.py
 Description: This script sends an email using SMTP server configuration provided via environment variables.
@@ -11,7 +13,7 @@ Usage:
     2. Run the script.
 Note: If the connection to the SMTP server is blocked or the authentication fails, appropriate error messages will be displayed.
 """
-#!/usr/bin/env python
+
 import os
 import smtplib
 from email.mime.text import MIMEText
