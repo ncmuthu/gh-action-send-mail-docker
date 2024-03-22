@@ -23,7 +23,7 @@ def send_email():
     # Get environment variables
     sender_email = os.getenv('FROM_EMAIL')
     #receiver_email = os.getenv('TO_EMAIL')
-    receiver_email = ""ncmuthu@gmail.com", "ncmuthuaws@gmail.com""
+    receiver_email = "ncmuthu@gmail.com, ncmuthuaws@gmail.com"
 
     smtp_server = os.getenv('SMTP_SERVER')
     smtp_port = int(os.getenv('SMTP_PORT'))
@@ -47,7 +47,7 @@ def send_email():
     with smtplib.SMTP(smtp_server, smtp_port) as server:
         server.starttls()
         server.login(smtp_username, smtp_password)
-        server.sendmail(sender_email, receiver_email, message.as_string())
+        server.sendmail(sender_email, "ncmuthu@gmail.com, ncmuthuaws@gmail.com", message.as_string())
 
     print('Email sent successfully!!')
     print(f"Receiver_email : {receiver_email}")
