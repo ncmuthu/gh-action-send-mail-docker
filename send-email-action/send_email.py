@@ -22,7 +22,8 @@ from email.mime.multipart import MIMEMultipart
 def send_email():
     # Get environment variables
     sender_email = os.getenv('FROM_EMAIL')
-    receiver_email = os.getenv('TO_EMAIL')
+    #receiver_email = os.getenv('TO_EMAIL')
+    receiver_email = "ncmuthu@gmail.com, ncmuthuaws@gmail.com"
 
     smtp_server = os.getenv('SMTP_SERVER')
     smtp_port = int(os.getenv('SMTP_PORT'))
