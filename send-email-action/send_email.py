@@ -49,6 +49,7 @@ def send_email():
         server.sendmail(sender_email, receiver_email, message.as_string())
 
     print('Email sent successfully!!')
+    print(f"Receiver_email : {receiver_email}")
 
 if __name__ == "__main__":
     send_email()
