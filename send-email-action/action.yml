@@ -41,4 +41,6 @@ runs:
     SMTP_PORT: ${{ inputs.smtp_port }}
     SMTP_USERNAME: ${{ inputs.smtp_username }}
     SMTP_PASSWORD: ${{ inputs.smtp_password }}
+    SUBJECT: ${{ inputs.subject }}
+    MAIL_BODY: ${{ inputs.mail_body }}
     
