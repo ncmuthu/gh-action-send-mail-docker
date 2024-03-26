@@ -31,8 +31,10 @@ def send_email():
     smtp_password = os.getenv('SMTP_PASSWORD')
 
     # Email content
-    subject = 'Hello from GitHub Actions'
-    body = 'This is a test email sent from GitHub Actions.'
+    #subject = 'Hello from GitHub Actions'
+    #body = 'This is a test email sent from GitHub Actions.'
+    subject = os.getenv('FROM_EMAIL')
+    body = os.getenv('MAIL_BODY')
 
     # Create message
     message = MIMEMultipart()
