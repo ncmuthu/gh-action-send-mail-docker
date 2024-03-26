@@ -33,7 +33,7 @@ def send_email():
     # Email content
     #subject = 'Hello from GitHub Actions'
     #body = 'This is a test email sent from GitHub Actions.'
-    subject = os.getenv('FROM_EMAIL')
+    subject = os.getenv('SUBJECT')
     body = os.getenv('MAIL_BODY')
 
     # Create message
