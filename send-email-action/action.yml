@@ -21,6 +21,12 @@ inputs:
   smtp_password:
     description: 'SMTP password'
     required: true
+  subject:
+    description: 'Subject'
+    required: true
+  mail_body:
+    description: 'message body'
+    required: true
     
 outputs:
   time: # id of output
