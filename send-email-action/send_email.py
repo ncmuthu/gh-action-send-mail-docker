@@ -18,6 +18,8 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 def send_email():
     # Get environment variables
@@ -43,6 +45,27 @@ def send_email():
     message["From"] = sender_email
     message["To"] = receiver_email
     message["Subject"] = subject
+
+    ##
+    # Open the file to be sent
+    attachment_path="test.zip"
+    with open(attachment_path, "rb") as attachment:
+        # Add file as application/octet-stream
+        part = MIMEBase("application", "octet-stream")
+        part.set_payload(attachment.read())
+
+    # Encode file in ASCII characters to send via email
+    encoders.encode_base64(part)
+
+    # Add header as key/value pair to attachment part
+    part.add_header(
+        "Content-Disposition",
+        f"attachment; filename= {attachment_path}",
+    )
+
+    # Add attachment to message and convert message to string
+    message.attach(part) 
+    ##
 
     # Add body to email
     #message.attach(MIMEText(body, "plain"))
