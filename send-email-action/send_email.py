@@ -35,6 +35,8 @@ def send_email():
     #body = 'This is a test email sent from GitHub Actions.'
     subject = os.getenv('SUBJECT')
     body = os.getenv('MAIL_BODY')
+    with open('body.html', "r") as file:
+        html_content = file.read() 
 
     # Create message
     message = MIMEMultipart()
@@ -43,7 +45,8 @@ def send_email():
     message["Subject"] = subject
 
     # Add body to email
-    message.attach(MIMEText(body, "plain"))
+    #message.attach(MIMEText(body, "plain"))
+    message.attach(MIMEText(html_content, "html"))
 
     # Send email
     with smtplib.SMTP(smtp_server, smtp_port) as server:
